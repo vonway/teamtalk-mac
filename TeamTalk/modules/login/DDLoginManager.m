@@ -72,25 +72,25 @@
             [DDClientState shareInstance].discoverURL = dic[@"discovery"];
             _lastLoginUserName = [name copy];
             _lastLoginPassword = [password copy];
-            log4Info(@"开始链接服务器")
+            log4Info(@"开始链接服务器");
             [_tcpServer loginTcpServerIP:_serverIp port:_port Success:^{
                 log4Info(@"连接服务器成功,开始验证用户信息");
                 [_msgServer loginWithUsername:name Password:password success:^(id object) {
                     MTUserEntity* user = object[@"user"];
                     NSUInteger serverTime = [object[@"serverTime"] integerValue];
-                    DDLog(@"-------------------------------------------> local:%f \n remote:%lu",[[NSDate date] timeIntervalSince1970],(unsigned long)serverTime);
+                    log4Info(@"-------------------------------------------> local:%f \n remote:%lu",[[NSDate date] timeIntervalSince1970],(unsigned long)serverTime);
                     [weakSelf p_loginSuccess:user];
                     _lastLoginUser = [user ID];
                     log4Info(@"验证用户信息通过");
                     success(user);
                 } failure:^(id object) {
-                    DDLog(@"login#登录验证失败");
+                    log4Info(@"login#登录验证失败");
                     log4Error(@"验证用户信息失败");
                     failure(@"登录验证失败");
                 }];
                 
             } failure:^{
-                log4Error(@"连接服务器失败");
+                NSLog(@"连接服务器失败");
                 failure(@"连接服务器失败");
             }];
         }
@@ -136,7 +136,9 @@
 
 - (void)p_loginSuccess:(MTUserEntity*)user
 {
-    [DDClientState shareInstance].userID = [user.ID copy];
+    //[DDClientState shareInstance].userID = [user.ID copy];
+    [DDClientState shareInstance].userID = @"2";
+    
     [[MTSysConfigModule shareInstance] getSysConfigFromLocal];
     [DDClientState shareInstance].userState = DDUserOnline;
     

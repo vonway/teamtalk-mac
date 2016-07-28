@@ -48,6 +48,7 @@
 @end
 
 @implementation DDRecentContactsViewController
+
 {
     NSString* _selectedSessionID;
 }
@@ -287,7 +288,7 @@
 }
 
 #pragma mark - NSMenu Delegate
-- (void)menuWillOpen:(NSMenu *)menu
+- (void)menuWillOpen:(NSMenu *)newmenu
 {
     NSInteger rowNumber = [_tableView clickedRow];
     if(rowNumber < 0)
@@ -312,54 +313,54 @@
         removeItemShow = NO;
     }
     
-    NSMenuItem* removeMenuItem = [menu itemAtIndex:0];
+    NSMenuItem* removeMenuItem = [newmenu itemAtIndex:0];
     [removeMenuItem setHidden:!removeItemShow];
     
     
     //设置置顶菜单
     if ([topSession containsObject:sessionID])
     {
-        NSMenuItem* topMenuItem = [menu itemAtIndex:2];
+        NSMenuItem* topMenuItem = [newmenu itemAtIndex:2];
         [topMenuItem setHidden:YES];
         
-        NSMenuItem* cancelMenuItem = [menu itemAtIndex:3];
+        NSMenuItem* cancelMenuItem = [newmenu itemAtIndex:3];
         [cancelMenuItem setHidden:NO];
         
     }
     else
     {
-        NSMenuItem* topMenuItem = [menu itemAtIndex:2];
+        NSMenuItem* topMenuItem = [newmenu itemAtIndex:2];
         [topMenuItem setHidden:NO];
         
         
-        NSMenuItem* cancelMenuItem = [menu itemAtIndex:3];
+        NSMenuItem* cancelMenuItem = [newmenu itemAtIndex:3];
         [cancelMenuItem setHidden:YES];
         
     }
     //设置屏蔽菜单
     if (session.sessionType == SessionTypeSessionTypeSingle)
     {
-        NSMenuItem* shieldMenuItem = [menu itemAtIndex:5];
+        NSMenuItem* shieldMenuItem = [newmenu itemAtIndex:5];
         [shieldMenuItem setHidden:YES];
         
-        NSMenuItem* cancelShieldMenuItem = [menu itemAtIndex:6];
+        NSMenuItem* cancelShieldMenuItem = [newmenu itemAtIndex:6];
         [cancelShieldMenuItem setHidden:YES];
     }
     NSArray* shieldSessions = [[MTSessionModule shareInstance] getShieldSessionIDs];
     if ([shieldSessions containsObject:sessionID])
     {
-        NSMenuItem* shieldMenuItem = [menu itemAtIndex:5];
+        NSMenuItem* shieldMenuItem = [newmenu itemAtIndex:5];
         [shieldMenuItem setHidden:YES];
         
-        NSMenuItem* cancelShieldMenuItem = [menu itemAtIndex:6];
+        NSMenuItem* cancelShieldMenuItem = [newmenu itemAtIndex:6];
         [cancelShieldMenuItem setHidden:NO];
     }
     else
     {
-        NSMenuItem* shieldMenuItem = [menu itemAtIndex:5];
+        NSMenuItem* shieldMenuItem = [newmenu itemAtIndex:5];
         [shieldMenuItem setHidden:NO];
         
-        NSMenuItem* cancelShieldMenuItem = [menu itemAtIndex:6];
+        NSMenuItem* cancelShieldMenuItem = [newmenu itemAtIndex:6];
         [cancelShieldMenuItem setHidden:YES];
     }
     

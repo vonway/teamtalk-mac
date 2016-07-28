@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6254" systemVersion="14C99d" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6254"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10117"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="DDAtUserListViewController">
@@ -16,13 +16,14 @@
             <rect key="frame" x="0.0" y="0.0" width="230" height="303"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="V40-oi-fwi">
-                <rect key="frame" x="1" y="17" width="228" height="285"/>
+                <rect key="frame" x="1" y="0.0" width="228" height="302"/>
                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 <subviews>
                     <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" headerView="MNl-AA-Os2" viewBased="YES" id="O3S-Ak-Mv5">
+                        <rect key="frame" x="0.0" y="0.0" width="228" height="279"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <size key="intercellSpacing" width="3" height="2"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                         <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                         <tableColumns>
                             <tableColumn identifier="ResultListColumnIdentifier" width="225" minWidth="40" maxWidth="1000" id="8ht-qF-De4">
@@ -79,12 +80,12 @@
                 <rect key="frame" x="1" y="119" width="223" height="15"/>
                 <autoresizingMask key="autoresizingMask"/>
             </scroller>
-            <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="whw-Bs-lPQ">
+            <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="whw-Bs-lPQ">
                 <rect key="frame" x="224" y="17" width="15" height="102"/>
                 <autoresizingMask key="autoresizingMask"/>
             </scroller>
             <tableHeaderView key="headerView" id="MNl-AA-Os2">
-                <rect key="frame" x="0.0" y="0.0" width="228" height="17"/>
+                <rect key="frame" x="0.0" y="0.0" width="228" height="23"/>
                 <autoresizingMask key="autoresizingMask"/>
             </tableHeaderView>
             <point key="canvasLocation" x="242" y="774.5"/>

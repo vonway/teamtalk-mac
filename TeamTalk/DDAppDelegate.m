@@ -167,6 +167,7 @@
 - (void)showMainWindowController
 {
     [_loginWindowController close];
+    [[DDMainWindowController instance] showWindow:nil];
     [[DDMainWindowController instance].window makeKeyAndOrderFront:nil];
     self.showWindow = [DDMainWindowController instance].window;
 }

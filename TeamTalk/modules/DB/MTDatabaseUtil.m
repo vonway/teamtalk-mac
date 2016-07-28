@@ -239,7 +239,7 @@
     {
         NSString* newValue = change[NSKeyValueChangeNewKey];
         NSString* oldValue = change[NSKeyValueChangeOldKey];
-        if (![newValue isEqualToString:oldValue])
+        if ( (newValue != nil && oldValue == [NSNull null]) || ![newValue isEqualToString:oldValue])
         {
             [self openCurrentUserDB];
         }

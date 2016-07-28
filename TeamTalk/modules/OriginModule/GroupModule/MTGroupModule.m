@@ -253,6 +253,7 @@ typedef void(^HandleGroupMemberChange)();
     [param setObject:reqUserId forKey:@"reqUserId"];
     [api requestWithObject:param Completion:^(id response, NSError *error) {
         if (!error) {
+            NSLog(@"load remote group in completion");
             NSMutableArray* groupInfos = [response objectForKey:@"groupVersionList"];
             NSInteger groupInfosCnt = [groupInfos count];
             NSMutableArray* needUpdateGroupList = [[NSMutableArray alloc] init];
@@ -282,6 +283,7 @@ typedef void(^HandleGroupMemberChange)();
             }
         }else{
             DDLog(@"error:%@",[error domain]);
+            NSLog(@"error:%@",[error domain]);
         }
     }];
     

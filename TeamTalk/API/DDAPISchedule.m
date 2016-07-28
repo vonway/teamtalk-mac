@@ -136,6 +136,7 @@ static NSInteger const timeInterval = 1;
             Analysis analysis = [api analysisReturnData];
             id response = analysis(data);
             [self p_requestCompletion:api];
+            NSLog(@"api is ok now completioning response");
             dispatch_async(dispatch_get_main_queue(), ^{
                 completion(response,nil);
             });

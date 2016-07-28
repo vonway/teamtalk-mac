@@ -69,18 +69,18 @@
 // -------------------------------------------------------------------------------
 //	setDescription:newDescription:
 // -------------------------------------------------------------------------------
-//- (void)setDescription:(NSString *)newDescription
-//{
-//	description = newDescription;
-//}
+- (void)setDescription:(NSString *)newDescription
+{
+	self.description = newDescription;
+}
 
 // -------------------------------------------------------------------------------
 //	description
 // -------------------------------------------------------------------------------
-//- (NSString *)description
-//{
-//	return description;
-//}
+- (NSString *)description
+{
+	return self.description;
+}
 
 // -------------------------------------------------------------------------------
 //	setText:newText:

@@ -5585,7 +5585,7 @@
 					"$(PROJECT_DIR)",
 					"/Users/vonway/Library/Developer/Xcode/DerivedData/TeamTalk-bjdyotzzbgutafbvknmghvbuqivu/Build/Products/Debug",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				OTHER_CODE_SIGN_FLAGS = "--deep";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mogujie.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = TeamTalk;
@@ -5612,7 +5612,7 @@
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Duoduo-ecacnztivbkeggegyktnermxjnpy/Build/Products/Debug",
 					"$(PROJECT_DIR)",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				OTHER_CODE_SIGN_FLAGS = "--deep";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mogujie.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = TeamTalk;

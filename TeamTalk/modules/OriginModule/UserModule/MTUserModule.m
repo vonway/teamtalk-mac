@@ -70,6 +70,7 @@
     DDAllUserAPI *api = [[DDAllUserAPI alloc] init];
     [api requestWithObject:@[@(latestUpdateTime)] Completion:^(id response, NSError *error) {
         if (!error) {
+            NSLog(@"all user req in completion");
             NSInteger responseLastUpdateTime = [[response objectForKey:@"latestUpdateTime"] integerValue];
             
             if(latestUpdateTime==0|| latestUpdateTime!=responseLastUpdateTime){
