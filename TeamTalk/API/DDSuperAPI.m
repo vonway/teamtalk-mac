@@ -17,6 +17,7 @@ static uint16_t theSeqNo = 0;
 {
     if ([DDClientState shareInstance].networkState == DDNetWorkDisconnect)
     {
+        NSLog(@"in request with object in network disconnect %@",object);
         //断网的话直接返回失败
         NSError* error = [NSError errorWithDomain:@"网络断开" code:1004 userInfo:nil];
         if (completion)
@@ -30,6 +31,7 @@ static uint16_t theSeqNo = 0;
     theSeqNo ++;
     _seqNo = theSeqNo;
     
+    
     //注册接口
     BOOL registerAPI = [[DDAPISchedule instance] registerApi:(id<DDAPIScheduleProtocol>)self];
     
@@ -37,7 +39,7 @@ static uint16_t theSeqNo = 0;
     {
         return;
     }
-    
+    NSLog(@"in request with object %@, %@",object,completion);
     //注册请求超时
     if ([(id<DDAPIScheduleProtocol>)self requestTimeOutTimeInterval] > 0)
     {

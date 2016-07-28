@@ -54,9 +54,11 @@
     [httpManager GET:accessUrlString parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSDictionary* responseDictionary = [NSJSONSerialization JSONObjectWithData:responseObject options:0 error:nil];
         block(responseDictionary);
+        NSLog(@"success");
         log4Info(@"获取服务器IP成功");
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         DDLog(@"failed");
+        NSLog(@"failed");
         log4Error(@"获取服务器IP失败");
         block(@{@"code":@(1001)});
     }];

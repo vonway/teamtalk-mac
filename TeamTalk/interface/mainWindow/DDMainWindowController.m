@@ -139,8 +139,10 @@
     [_leftBarViewController selectTheItemAtIndex:0];
     _leftBarViewController.delegate = self;
     NSViewController* viewController = _firstColumnViewControllers[0];
+    
     CGFloat width = self.firstColumnView.bounds.size.width;
     CGFloat height = self.firstColumnView.bounds.size.height;
+    
     [viewController.view setFrame:NSMakeRect(0, 0, width, height)];
     [self.firstColumnView addSubview:viewController.view];
 

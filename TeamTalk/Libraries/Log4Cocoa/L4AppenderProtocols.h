@@ -13,12 +13,12 @@
 /**
  * Accessor for unique name attribute for this appender.
  */
-@property (readwrite) NSString * name;
+@property (assign,readwrite) NSString * name;
 
 /**
  * Accessor for layout of this appender.
  */
-@property (readwrite) L4Layout * layout;
+@property (readwrite,assign) L4Layout * layout;
 
 /**
  * Returns if the appender requires layout.
